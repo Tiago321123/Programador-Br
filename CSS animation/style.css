@@ -9,20 +9,45 @@
     100%{ background-color: green; width: 100px;}
 }
 
+@keyframes movee {
+    0%{left: 0px;}
+    100%{left: 300px;}
+}
+
 .box{
+    position: relative; /* sem ele, não vai o left ali*/
     width: 200px;
     height: 200px;
     border: solid;
-    animation-name: changecolor;
+    animation-name: movee;
     animation-duration: 3s;
     animation-iteration-count: 3;
-    animation-direction: alternate-reverse;
-    animation-fill-mode: backwards; /* já começa meio q na animação, como se não tivesse o delay */
-    animation-fill-mode:forwards; /* permanece com a última animação */
-    animation-fill-mode: both; /* para poder usar os dois juntos, backwards e forwards */
+    animation-fill-mode:forwards; /* permanece com a última animação 
+    /* animation-direction: alternate-reverse;
+    animation-delay: 2s;
+    animation-fill-mode: backwards; /* já começa meio q na animação, como se não tivesse o delay 
+    animation-fill-mode: both; para poder usar os dois juntos, backwards e forwards */
+
+    /* animation: name duration time-function delay interation-count direction fill-mode */
+    animation: movee 3s linear 0s 3 normal forwards; /* resumir em apenas uma linha */
 }
 
-@keyframes move {
-    0%{left: 0px;}
-    100%{left: 100px}
+.div1{
+    animation-timing-function: linear;
+}
+
+.div2{
+    animation-timing-function: ease;
+}
+
+.div3{
+    animation-timing-function: ease-in;
+}
+
+.div4{
+    animation-timing-function:ease-out;
+}
+
+.div5{
+    animation-timing-function: ease-in-out;
 }
